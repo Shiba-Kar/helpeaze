@@ -1,22 +1,22 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_font_icons/flutter_font_icons.dart';
 import 'package:riverpod/riverpod.dart';
 
 import '../models/models.dart';
+import '../pages/pages.dart';
 
-class ButtomNavigationProvider extends StateNotifier<int> {
+class ButtomNavigationProvider extends StateNotifier<Nav> {
   final Ref ref;
-  final items = const [
-    BottomNavigationBarItem(icon: Icon(FontAwesome.home), label: 'Home'),
-    BottomNavigationBarItem(icon: Icon(FontAwesome.search), label: 'Search'),
-    BottomNavigationBarItem(icon: Icon(Icons.add_box), label: 'Share'),
-    BottomNavigationBarItem(icon: Icon(Icons.edit), label: 'Cummunity'),
-    BottomNavigationBarItem(icon: Icon(Icons.people), label: 'Connections'),
+  final List<Map<String, dynamic>> pages = const [
+    {"widget": HomePage(), "label": "Home"},
+    {"widget": MembershipPage(), "label": "Membership"},
+    {"widget": WecarePage(), "label": "We care"},
+    {"widget": MorePage(), "label": "More"},
   ];
-  ButtomNavigationProvider(this.ref) : super(0);
-  onTap(int index) => state = index;
+  ButtomNavigationProvider(this.ref)
+      : super(const Nav(index: 0, page: HomePage(), label: "Home"));
+  onTap(int index) => state = Nav(
+      page: pages[index]['widget'], index: index, label: pages[index]['label']);
 }
 
 final buttomNavigationProvider =
-    StateNotifierProvider<ButtomNavigationProvider, int>(
+    StateNotifierProvider<ButtomNavigationProvider, Nav>(
         (ref) => ButtomNavigationProvider(ref));

@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class AppDrawer extends StatelessWidget {
+import '../../../widgets/widgets.dart';
+
+class AppDrawer extends ConsumerWidget {
   const AppDrawer({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, ref) {
     return Drawer(
       child: Column(
         children: [
@@ -78,6 +81,18 @@ class AppDrawer extends StatelessWidget {
               ),
             ),
             title: const Text("Feedback"),
+          ),
+          const Spacer(),
+          const Divider(),
+          Padding(
+            padding: EdgeInsets.only(left: 10.w),
+            child: Row(
+              children: const [
+                Text("v1.0.0"),
+                Spacer(),
+                ThemeSwitch(),
+              ],
+            ),
           )
         ],
       ),
