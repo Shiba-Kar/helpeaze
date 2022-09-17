@@ -30,6 +30,7 @@ dependencies:
   flutter_snake_navigationbar: ^0.6.1
   form_builder_validators: ^8.3.0
   flutter_form_builder: ^7.6.0
+  beamer: ^1.5.3
 
 dev_dependencies:
   flutter_test:

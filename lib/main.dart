@@ -1,18 +1,31 @@
+import 'package:beamer/beamer.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:form_builder_validators/localization/l10n.dart';
+import 'package:helpeaze/features/auth/views/views.dart';
 import 'package:helpeaze/providers/theme_provider.dart';
+import 'package:helpeaze/router.dart';
 import 'core/core.dart';
 import 'features/features.dart';
 
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 
-void main() {
-  // WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
-  // FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+final _routerDelegate = BeamerDelegate(
+  locationBuilder: (routeInfo, __) => RouterLocation(routeInfo),
+  initialPath: '/birdge',
+);
 
-  runApp(ProviderScope(observers: [Logger()], child: const MyApp()));
+void main() async {
+  await initAll(WidgetsFlutterBinding.ensureInitialized());
+  runApp(
+    ProviderScope(
+      observers: kDebugMode ? [Logger()] : null,
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends ConsumerWidget {
@@ -24,20 +37,25 @@ class MyApp extends ConsumerWidget {
     final theme = ref.watch(themeProvider);
     return ScreenUtilInit(
       child: const Bridge(),
-      builder: (BuildContext context, child) {
-        return MaterialApp(
+      builder: (BuildContext context, __) {
+        return MaterialApp.router(
+          routeInformationParser: BeamerParser(),
+          supportedLocales: FormBuilderLocalizations.delegate.supportedLocales,
+          backButtonDispatcher:
+              BeamerBackButtonDispatcher(delegate: _routerDelegate),
+          localizationsDelegates: const [FormBuilderLocalizations.delegate],
+          routerDelegate: _routerDelegate,
           title: 'Help Eaze',
           theme: FlexThemeData.light(
-            scheme: FlexScheme.red,
+            scheme: FlexScheme.redWine,
             fontFamily: 'Lato',
             appBarElevation: 0.5,
           ),
           darkTheme: FlexThemeData.dark(
-            scheme: FlexScheme.outerSpace,
+            scheme: FlexScheme.rosewood,
             fontFamily: 'Lato',
             appBarElevation: 2,
           ),
-          home: child,
           themeMode: theme,
         );
       },
@@ -50,6 +68,6 @@ class Bridge extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const HomeView();
+    return const RegistrationView();
   }
 }
