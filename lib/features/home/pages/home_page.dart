@@ -1,7 +1,9 @@
+import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:helpeaze/animations/animations.dart';
+import 'package:helpeaze/features/features.dart';
 import 'package:helpeaze/providers/theme_provider.dart';
 
 import '../models/models.dart';
@@ -13,14 +15,44 @@ class HomePage extends ConsumerWidget {
   Widget build(BuildContext context, ref) {
     final themeP = ref.read(themeProvider.notifier);
     const List<Item> items = [
-      Item(name: "Book Amulance", image: 'ambulance.png'),
-      Item(name: "Medicine Remainder", image: 'medicine.png'),
-      Item(name: "My Doctor", image: 'stethoscope.png'),
-      Item(name: "My Emergency Contract", image: 'emergency-call.png'),
-      Item(name: "Hospitals Nearby", image: 'apartment.png'),
-      Item(name: "My Medicine History", image: 'medical-history.png'),
-      Item(name: "Blood Donation", image: 'health-care.png'),
-      Item(name: "Organ Donation", image: 'health-care.png'),
+      Item(
+          name: "Book Amulance",
+          image: 'ambulance.png',
+          page: '/bookAmbulance'),
+      Item(
+          name: "Medicine Remainder",
+          image: 'medicine.png',
+          page: '/medicineReminder'),
+      Item(
+        name: "My Doctor",
+        image: 'stethoscope.png',
+        page: '/myDoctor',
+      ),
+      Item(
+        name: "My Emergency Contract",
+        image: 'emergency-call.png',
+        page: '/myEmergencyContact',
+      ),
+      Item(
+        name: "Hospitals Nearby",
+        image: 'apartment.png',
+        page: '/hospitalsNearby',
+      ),
+      Item(
+        name: "My Medicine History",
+        image: 'medical-history.png',
+        page: '/myMedicineHistory',
+      ),
+      Item(
+        name: "Blood Donation",
+        image: 'health-care.png',
+        page: '/bloodDonation',
+      ),
+      Item(
+        name: "Organ Donation",
+        image: 'health-care.png',
+        page: '/organDonation',
+      ),
     ];
     return GridView.builder(
         physics: const BouncingScrollPhysics(),
@@ -41,7 +73,7 @@ class HomePage extends ConsumerWidget {
               child: Card(
                 elevation: 10.0,
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () => context.beamToNamed(items[index].page),
                   child: Padding(
                     padding: EdgeInsets.all(6.w),
                     child: Column(

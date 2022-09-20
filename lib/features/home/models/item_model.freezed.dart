@@ -18,6 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$Item {
   String get name => throw _privateConstructorUsedError;
   String get image => throw _privateConstructorUsedError;
+  String get page => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ItemCopyWith<Item> get copyWith => throw _privateConstructorUsedError;
@@ -27,7 +28,7 @@ mixin _$Item {
 abstract class $ItemCopyWith<$Res> {
   factory $ItemCopyWith(Item value, $Res Function(Item) then) =
       _$ItemCopyWithImpl<$Res>;
-  $Res call({String name, String image});
+  $Res call({String name, String image, String page});
 }
 
 /// @nodoc
@@ -42,6 +43,7 @@ class _$ItemCopyWithImpl<$Res> implements $ItemCopyWith<$Res> {
   $Res call({
     Object? name = freezed,
     Object? image = freezed,
+    Object? page = freezed,
   }) {
     return _then(_value.copyWith(
       name: name == freezed
@@ -52,6 +54,10 @@ class _$ItemCopyWithImpl<$Res> implements $ItemCopyWith<$Res> {
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as String,
+      page: page == freezed
+          ? _value.page
+          : page // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -61,7 +67,7 @@ abstract class _$$_ItemCopyWith<$Res> implements $ItemCopyWith<$Res> {
   factory _$$_ItemCopyWith(_$_Item value, $Res Function(_$_Item) then) =
       __$$_ItemCopyWithImpl<$Res>;
   @override
-  $Res call({String name, String image});
+  $Res call({String name, String image, String page});
 }
 
 /// @nodoc
@@ -77,6 +83,7 @@ class __$$_ItemCopyWithImpl<$Res> extends _$ItemCopyWithImpl<$Res>
   $Res call({
     Object? name = freezed,
     Object? image = freezed,
+    Object? page = freezed,
   }) {
     return _then(_$_Item(
       name: name == freezed
@@ -87,6 +94,10 @@ class __$$_ItemCopyWithImpl<$Res> extends _$ItemCopyWithImpl<$Res>
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as String,
+      page: page == freezed
+          ? _value.page
+          : page // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -94,16 +105,18 @@ class __$$_ItemCopyWithImpl<$Res> extends _$ItemCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Item implements _Item {
-  const _$_Item({required this.name, required this.image});
+  const _$_Item({required this.name, required this.image, required this.page});
 
   @override
   final String name;
   @override
   final String image;
+  @override
+  final String page;
 
   @override
   String toString() {
-    return 'Item(name: $name, image: $image)';
+    return 'Item(name: $name, image: $image, page: $page)';
   }
 
   @override
@@ -112,14 +125,16 @@ class _$_Item implements _Item {
         (other.runtimeType == runtimeType &&
             other is _$_Item &&
             const DeepCollectionEquality().equals(other.name, name) &&
-            const DeepCollectionEquality().equals(other.image, image));
+            const DeepCollectionEquality().equals(other.image, image) &&
+            const DeepCollectionEquality().equals(other.page, page));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(image));
+      const DeepCollectionEquality().hash(image),
+      const DeepCollectionEquality().hash(page));
 
   @JsonKey(ignore: true)
   @override
@@ -129,12 +144,16 @@ class _$_Item implements _Item {
 
 abstract class _Item implements Item {
   const factory _Item(
-      {required final String name, required final String image}) = _$_Item;
+      {required final String name,
+      required final String image,
+      required final String page}) = _$_Item;
 
   @override
   String get name;
   @override
   String get image;
+  @override
+  String get page;
   @override
   @JsonKey(ignore: true)
   _$$_ItemCopyWith<_$_Item> get copyWith => throw _privateConstructorUsedError;

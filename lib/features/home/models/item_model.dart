@@ -7,5 +7,6 @@ abstract class Item with _$Item {
   const factory Item({
     required String name,
     required String image,
+    required String page,
   }) = _Item;
 }

@@ -42,7 +42,7 @@ class _RegistrationViewState extends State<RegistrationView> {
             child: Image.asset('assets/icons/logo-01.png'),
           )
         ],
-        bottom: const ButtomBar(),
+        bottom: const ButtomBar(title: 'Login'),
       ),
       body: FormBuilder(
         key: _formKey,
@@ -74,7 +74,7 @@ class _RegistrationViewState extends State<RegistrationView> {
                     ),
                     CustomTextField(
                       hintText: "Email",
-                      prefixIcon: Icon(Icons.mail),
+                      prefixIcon: const Icon(Icons.mail),
                       name: "email",
                       validator: FormBuilderValidators.compose([
                         FormBuilderValidators.required(),
@@ -93,7 +93,7 @@ class _RegistrationViewState extends State<RegistrationView> {
                     ),
                     CustomTextField(
                       hintText: "City",
-                      prefixIcon: Icon(Icons.location_city),
+                      prefixIcon: const Icon(Icons.location_city),
                       name: "city",
                       validator: FormBuilderValidators.compose([
                         FormBuilderValidators.required(),

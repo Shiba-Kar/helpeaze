@@ -46,6 +46,7 @@ class MyApp extends ConsumerWidget {
           localizationsDelegates: const [FormBuilderLocalizations.delegate],
           routerDelegate: _routerDelegate,
           title: 'Help Eaze',
+          debugShowCheckedModeBanner: false,
           theme: FlexThemeData.light(
             scheme: FlexScheme.redWine,
             fontFamily: 'Lato',
@@ -68,6 +69,6 @@ class Bridge extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const RegistrationView();
+    return const LoginView();
   }
 }
