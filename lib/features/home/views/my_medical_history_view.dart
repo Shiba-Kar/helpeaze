@@ -28,7 +28,7 @@ class _MyMedicalHistoryViewState extends State<MyMedicalHistoryView> {
           width: 150.w,
           child: Image.asset('assets/icons/logo-01.png'),
         ),
-        bottom: const ButtomBar(title: "My Medicine History"),
+        bottom: const ButtomBar(title: "My Medical History"),
         actions: [
           IconButton(
               onPressed: null,
