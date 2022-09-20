@@ -17,7 +17,7 @@ class RouterLocation extends BeamLocation<BeamState> {
         '/medicineReminder',
         '/myDoctor',
         '/myEmergencyContact',
-        '/myMedicineHistory',
+        '/myMediacalHistory',
         '/bloodDonation', '/organDonation', '/hospitalsNearby',
       ];
 
@@ -83,12 +83,12 @@ class RouterLocation extends BeamLocation<BeamState> {
           type: BeamPageType.slideRightTransition,
           child: MyEmergencyContactView(),
         ),
-      if (containsKey('myMedicineHistory'))
+      if (containsKey('myMediacalHistory'))
         const BeamPage(
-          key: ValueKey('myMedicineHistory'),
-          title: 'My Medicine History',
+          key: ValueKey('myMediacalHistory'),
+          title: 'My Medical History',
           type: BeamPageType.slideRightTransition,
-          child: MyMedicineHistoryView(),
+          child: MyMedicalHistoryView(),
         ),
       if (containsKey('bloodDonation'))
         const BeamPage(

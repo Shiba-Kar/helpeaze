@@ -39,9 +39,9 @@ class HomePage extends ConsumerWidget {
         page: '/hospitalsNearby',
       ),
       Item(
-        name: "My Medicine History",
+        name: "My Medical History",
         image: 'medical-history.png',
-        page: '/myMedicineHistory',
+        page: '/myMediacalHistory',
       ),
       Item(
         name: "Blood Donation",

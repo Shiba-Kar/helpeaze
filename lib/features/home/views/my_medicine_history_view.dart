@@ -5,14 +5,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../auth/widgets/buttom_bar.dart';
 
-class MyMedicineHistoryView extends StatefulWidget {
-  const MyMedicineHistoryView({Key? key}) : super(key: key);
+class MyMedicalHistoryView extends StatefulWidget {
+  const MyMedicalHistoryView({Key? key}) : super(key: key);
 
   @override
-  State<MyMedicineHistoryView> createState() => _MyMedicineHistoryViewState();
+  State<MyMedicalHistoryView> createState() => _MyMedicalHistoryViewState();
 }
 
-class _MyMedicineHistoryViewState extends State<MyMedicineHistoryView> {
+class _MyMedicalHistoryViewState extends State<MyMedicalHistoryView> {
   final _formKey = GlobalKey<FormBuilderState>();
   @override
   Widget build(BuildContext context) {
