@@ -5,6 +5,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:intl/intl.dart';
+import 'package:intl/date_symbol_data_local.dart';
 
 Future<bool?> showToast(String message,
     [ToastGravity gravity = ToastGravity.BOTTOM]) async {
@@ -37,6 +39,7 @@ Future initAll(WidgetsBinding widgetsBinding) async {
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitDown, DeviceOrientation.portraitUp]);
+  initializeDateFormatting();
   initAppWrite();
   initMapIndia();
 

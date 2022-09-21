@@ -2,6 +2,9 @@ import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:form_builder_validators/form_builder_validators.dart';
+import 'package:helpeaze/features/home/widgets/widgets.dart';
+import 'package:helpeaze/widgets/widgets.dart';
 
 import '../../auth/widgets/buttom_bar.dart';
 
@@ -42,7 +45,54 @@ class _MyMedicalHistoryViewState extends State<MyMedicalHistoryView> {
       body: FormBuilder(
         key: _formKey,
         child: Column(
-          children: const [Text("data")],
+          children: [
+            CustomTextField(
+              hintText: "Ilness Name",
+              validator: FormBuilderValidators.compose(
+                  [FormBuilderValidators.required()]),
+              name: "fname",
+              suffixIcon: const Icon(Icons.person),
+            ),
+            CustomTextField(
+              hintText: "Doctor name",
+              name: "phone",
+              validator: FormBuilderValidators.compose([
+                FormBuilderValidators.required(),
+                FormBuilderValidators.integer()
+              ]),
+              suffixIcon: const Icon(Icons.phone),
+              keyboardType: TextInputType.phone,
+            ),
+            CustomTextField(
+              hintText: "Medicine Name",
+              suffixIcon: const Icon(Icons.mail),
+              name: "email",
+              validator: FormBuilderValidators.compose([
+                FormBuilderValidators.required(),
+                FormBuilderValidators.email()
+              ]),
+              keyboardType: TextInputType.emailAddress,
+            ),
+            Calender(
+              validator: FormBuilderValidators.compose([
+                FormBuilderValidators.required(),
+              ]),
+              name: "",
+              hintText: "",
+            ),
+            //  const Spacer(),
+            ElevatedButton(
+              onPressed: null,
+              style: ButtonStyle(
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(18.0),
+                  ),
+                ),
+              ),
+              child: const Text("Pay & Register"),
+            )
+          ],
         ),
       ),
     );
