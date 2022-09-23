@@ -8,6 +8,7 @@ abstract class Nav with _$Nav {
   const factory Nav({
     required Widget page,
     required int index,
+    required String pagelabel,
     required String label,
   }) = _Nav;
 }

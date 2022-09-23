@@ -18,6 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$Nav {
   Widget get page => throw _privateConstructorUsedError;
   int get index => throw _privateConstructorUsedError;
+  String get pagelabel => throw _privateConstructorUsedError;
   String get label => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -28,7 +29,7 @@ mixin _$Nav {
 abstract class $NavCopyWith<$Res> {
   factory $NavCopyWith(Nav value, $Res Function(Nav) then) =
       _$NavCopyWithImpl<$Res>;
-  $Res call({Widget page, int index, String label});
+  $Res call({Widget page, int index, String pagelabel, String label});
 }
 
 /// @nodoc
@@ -43,6 +44,7 @@ class _$NavCopyWithImpl<$Res> implements $NavCopyWith<$Res> {
   $Res call({
     Object? page = freezed,
     Object? index = freezed,
+    Object? pagelabel = freezed,
     Object? label = freezed,
   }) {
     return _then(_value.copyWith(
@@ -54,6 +56,10 @@ class _$NavCopyWithImpl<$Res> implements $NavCopyWith<$Res> {
           ? _value.index
           : index // ignore: cast_nullable_to_non_nullable
               as int,
+      pagelabel: pagelabel == freezed
+          ? _value.pagelabel
+          : pagelabel // ignore: cast_nullable_to_non_nullable
+              as String,
       label: label == freezed
           ? _value.label
           : label // ignore: cast_nullable_to_non_nullable
@@ -67,7 +73,7 @@ abstract class _$$_NavCopyWith<$Res> implements $NavCopyWith<$Res> {
   factory _$$_NavCopyWith(_$_Nav value, $Res Function(_$_Nav) then) =
       __$$_NavCopyWithImpl<$Res>;
   @override
-  $Res call({Widget page, int index, String label});
+  $Res call({Widget page, int index, String pagelabel, String label});
 }
 
 /// @nodoc
@@ -83,6 +89,7 @@ class __$$_NavCopyWithImpl<$Res> extends _$NavCopyWithImpl<$Res>
   $Res call({
     Object? page = freezed,
     Object? index = freezed,
+    Object? pagelabel = freezed,
     Object? label = freezed,
   }) {
     return _then(_$_Nav(
@@ -94,6 +101,10 @@ class __$$_NavCopyWithImpl<$Res> extends _$NavCopyWithImpl<$Res>
           ? _value.index
           : index // ignore: cast_nullable_to_non_nullable
               as int,
+      pagelabel: pagelabel == freezed
+          ? _value.pagelabel
+          : pagelabel // ignore: cast_nullable_to_non_nullable
+              as String,
       label: label == freezed
           ? _value.label
           : label // ignore: cast_nullable_to_non_nullable
@@ -105,18 +116,24 @@ class __$$_NavCopyWithImpl<$Res> extends _$NavCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Nav implements _Nav {
-  const _$_Nav({required this.page, required this.index, required this.label});
+  const _$_Nav(
+      {required this.page,
+      required this.index,
+      required this.pagelabel,
+      required this.label});
 
   @override
   final Widget page;
   @override
   final int index;
   @override
+  final String pagelabel;
+  @override
   final String label;
 
   @override
   String toString() {
-    return 'Nav(page: $page, index: $index, label: $label)';
+    return 'Nav(page: $page, index: $index, pagelabel: $pagelabel, label: $label)';
   }
 
   @override
@@ -126,6 +143,7 @@ class _$_Nav implements _Nav {
             other is _$_Nav &&
             const DeepCollectionEquality().equals(other.page, page) &&
             const DeepCollectionEquality().equals(other.index, index) &&
+            const DeepCollectionEquality().equals(other.pagelabel, pagelabel) &&
             const DeepCollectionEquality().equals(other.label, label));
   }
 
@@ -134,6 +152,7 @@ class _$_Nav implements _Nav {
       runtimeType,
       const DeepCollectionEquality().hash(page),
       const DeepCollectionEquality().hash(index),
+      const DeepCollectionEquality().hash(pagelabel),
       const DeepCollectionEquality().hash(label));
 
   @JsonKey(ignore: true)
@@ -146,12 +165,15 @@ abstract class _Nav implements Nav {
   const factory _Nav(
       {required final Widget page,
       required final int index,
+      required final String pagelabel,
       required final String label}) = _$_Nav;
 
   @override
   Widget get page;
   @override
   int get index;
+  @override
+  String get pagelabel;
   @override
   String get label;
   @override
