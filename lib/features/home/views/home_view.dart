@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_font_icons/flutter_font_icons.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../auth/widgets/widgets.dart';
 import '../providers/providers.dart';
 import '../widgets/widgets.dart';
 
@@ -24,7 +25,9 @@ class HomeView extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).canvasColor,
+        toolbarHeight: 100.h,
         iconTheme: IconThemeData(color: Theme.of(context).primaryColor),
+        bottom: ButtomBar(title: buttomNav.pagelabel),
         actions: [
           IconButton(
               onPressed: null,

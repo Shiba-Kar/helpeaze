@@ -41,8 +41,8 @@ class _BloodDonationViewState extends State<BloodDonationView> {
       ),
       body: FormBuilder(
         key: _formKey,
-        child: Column(
-          children: const [Text("data")],
+        child: const Center(
+          child: Text("comming soon"),
         ),
       ),
     );

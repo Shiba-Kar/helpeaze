@@ -34,65 +34,89 @@ class _MyMedicalHistoryViewState extends State<MyMedicalHistoryView> {
         bottom: const ButtomBar(title: "My Medical History"),
         actions: [
           IconButton(
-              onPressed: null,
-              icon: SizedBox(
-                height: 20.w,
-                width: 20.w,
-                child: Image.asset('assets/icons/notifications.png'),
-              ))
+            onPressed: null,
+            icon: SizedBox(
+              height: 20.w,
+              width: 20.w,
+              child: Image.asset('assets/icons/notifications.png'),
+            ),
+          )
         ],
       ),
       body: FormBuilder(
         key: _formKey,
-        child: Column(
-          children: [
-            CustomTextField(
-              hintText: "Ilness Name",
-              validator: FormBuilderValidators.compose(
-                  [FormBuilderValidators.required()]),
-              name: "fname",
-              suffixIcon: const Icon(Icons.person),
-            ),
-            CustomTextField(
-              hintText: "Doctor name",
-              name: "phone",
-              validator: FormBuilderValidators.compose([
-                FormBuilderValidators.required(),
-                FormBuilderValidators.integer()
-              ]),
-              suffixIcon: const Icon(Icons.phone),
-              keyboardType: TextInputType.phone,
-            ),
-            CustomTextField(
-              hintText: "Medicine Name",
-              suffixIcon: const Icon(Icons.mail),
-              name: "email",
-              validator: FormBuilderValidators.compose([
-                FormBuilderValidators.required(),
-                FormBuilderValidators.email()
-              ]),
-              keyboardType: TextInputType.emailAddress,
-            ),
-            Calender(
-              validator: FormBuilderValidators.compose([
-                FormBuilderValidators.required(),
-              ]),
-              name: "",
-              hintText: "",
-            ),
-            //  const Spacer(),
-            ElevatedButton(
-              onPressed: null,
-              style: ButtonStyle(
-                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                  RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(18.0),
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.all(10.w),
+            child: Column(
+              children: [
+                const SizedBox(height: 20.0),
+                CustomTextField(
+                  hintText: "Ilness Name",
+                  validator: FormBuilderValidators.compose(
+                      [FormBuilderValidators.required()]),
+                  name: "fname",
+                  suffixIcon: const Icon(Icons.person),
+                ),
+                CustomTextField(
+                  hintText: "Doctor name",
+                  name: "phone",
+                  validator: FormBuilderValidators.compose([
+                    FormBuilderValidators.required(),
+                    FormBuilderValidators.integer()
+                  ]),
+                  suffixIcon: const Icon(Icons.phone),
+                  keyboardType: TextInputType.phone,
+                ),
+                CustomTextField(
+                  hintText: "Medicine Name",
+                  suffixIcon: const Icon(Icons.mail),
+                  name: "email",
+                  validator: FormBuilderValidators.compose([
+                    FormBuilderValidators.required(),
+                    FormBuilderValidators.email()
+                  ]),
+                  keyboardType: TextInputType.emailAddress,
+                ),
+                DateTimePickerField(
+                  validator: FormBuilderValidators.compose([
+                    FormBuilderValidators.required(),
+                  ]),
+                  name: "ldvd",
+                  suffixIcon: const Icon(Icons.calendar_month),
+                  hintText: "Last Doctor Visit Date",
+                ),
+                //  const Spacer(),
+                // SizedBox(height: 20.h),
+                ListTile(
+                  contentPadding: EdgeInsets.zero,
+                  title: Padding(
+                    padding: EdgeInsets.symmetric(vertical: 20.w),
+                    child: const Text("Upload medical reports"),
+                  ),
+                  subtitle: const FilePickerField(
+                    hintText: "Attachments",
+                    name: "files",
+                    suffixIcon: Icon(Icons.file_copy),
                   ),
                 ),
-              ),
-              child: const Text("Pay & Register"),
-            )
-          ],
+                SizedBox(
+                  width: 100.w,
+                  child: ElevatedButton(
+                    onPressed: () => {},
+                    style: ButtonStyle(
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(18.0),
+                        ),
+                      ),
+                    ),
+                    child: const Text("Add"),
+                  ),
+                )
+              ],
+            ),
+          ),
         ),
       ),
     );
