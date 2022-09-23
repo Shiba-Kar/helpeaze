@@ -48,14 +48,14 @@ class MyApp extends ConsumerWidget {
           title: 'Help Eaze',
           debugShowCheckedModeBanner: false,
           theme: FlexThemeData.light(
-            scheme: FlexScheme.redWine,
+            scheme: FlexScheme.red,
             fontFamily: 'Lato',
-            appBarElevation: 0.5,
+            appBarElevation: 0,
           ),
           darkTheme: FlexThemeData.dark(
-            scheme: FlexScheme.rosewood,
+            scheme: FlexScheme.outerSpace,
             fontFamily: 'Lato',
-            appBarElevation: 2,
+            appBarElevation: 0,
           ),
           themeMode: theme,
         );
