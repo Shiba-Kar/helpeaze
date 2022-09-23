@@ -11,6 +11,7 @@ class CustomTextField extends StatelessWidget {
   final TextInputType? keyboardType;
   final int? maxLength;
   final Icon? prefixIcon;
+  final Color? fillColor;
   final String? initialValue;
   final int maxLines;
   final void Function(dynamic value)? onChanged;
@@ -37,6 +38,7 @@ class CustomTextField extends StatelessWidget {
     this.readOnly = false,
     this.onTap,
     this.suffixIcon,
+    this.fillColor,
   }) : super(key: key);
 
   @override
@@ -47,6 +49,7 @@ class CustomTextField extends StatelessWidget {
       obscureText: obscureText,
       maxLines: maxLines,
       autocorrect: true,
+
       enableSuggestions: true,
       // scrollPadding: EdgeInsets.all(10.0),
       // cursorColor: Theme.of(context).colorScheme.primary,
@@ -55,14 +58,15 @@ class CustomTextField extends StatelessWidget {
           borderRadius: BorderRadius.circular(15.w),
           borderSide: BorderSide.none,
         ),
-        prefixIcon: prefixIcon ?? const SizedBox(width: 0, height: 0),
+        prefixIcon: prefixIcon,
         // hoverColor: Colors.white,
+        //  fillColor: fillColor,
 
         // focusedBorder: InputBorder.none,
         // enabledBorder: InputBorder.none,
         // errorBorder: InputBorder.none,
         // disabledBorder: InputBorder.none,
-        contentPadding: const EdgeInsets.only(top: 15, bottom: 0, right: 10),
+        // contentPadding: const EdgeInsets.only(top: 15, bottom: 0, right: 10),
         counterStyle: TextStyle(fontSize: 10.w),
         counter: const SizedBox(height: 0.0, width: 0.0),
         isDense: true,
