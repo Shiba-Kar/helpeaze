@@ -9,8 +9,8 @@ import '../widgets/widgets.dart';
 import 'package:flutter_snake_navigationbar/flutter_snake_navigationbar.dart';
 
 class HomeView extends ConsumerWidget {
-  const HomeView({Key? key}) : super(key: key);
-
+  HomeView({Key? key}) : super(key: key);
+  final globalKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context, ref) {
     final buttomNav = ref.watch(buttomNavigationProvider);
@@ -23,9 +23,20 @@ class HomeView extends ConsumerWidget {
       BottomNavigationBarItem(icon: Icon(Icons.boy_rounded), label: 'More'),
     ];
     return Scaffold(
+      key: globalKey,
       appBar: AppBar(
         backgroundColor: Theme.of(context).canvasColor,
         toolbarHeight: 100.h,
+        leading: Container(
+          // color: Colors.red,
+
+          width: 10.w,
+          padding: EdgeInsets.only(left: 10.w),
+          child: GestureDetector(
+              onTap: () => globalKey.currentState!.openDrawer(),
+              child: Image.asset('assets/icons/menu.png')),
+        ),
+        leadingWidth: 30.w,
         iconTheme: IconThemeData(color: Theme.of(context).primaryColor),
         bottom: ButtomBar(title: buttomNav.pagelabel),
         actions: [

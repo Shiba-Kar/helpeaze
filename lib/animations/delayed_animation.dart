@@ -7,8 +7,11 @@ final offsetY = MovieTweenProperty<double>();
 class DelayedAnimtion extends StatelessWidget {
   final Widget child;
   final int delay;
-  const DelayedAnimtion({Key? key, required this.child, this.delay = 500})
-      : super(key: key);
+  const DelayedAnimtion({
+    Key? key,
+    required this.child,
+    this.delay = 500,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

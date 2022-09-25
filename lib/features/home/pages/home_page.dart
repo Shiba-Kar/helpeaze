@@ -66,7 +66,7 @@ class HomePage extends ConsumerWidget {
         itemCount: items.length,
         itemBuilder: (BuildContext ctx, index) {
           return DelayedAnimtion(
-            delay: 500 + (100 * index),
+            delay: 0 + (100 * index),
             child: SizedBox(
               width: ScreenUtil().screenWidth,
               height: ScreenUtil().screenHeight,

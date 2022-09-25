@@ -50,11 +50,13 @@ class MyApp extends ConsumerWidget {
           theme: FlexThemeData.light(
             scheme: FlexScheme.red,
             fontFamily: 'Lato',
+            appBarBackground: Theme.of(context).cardColor,
             appBarElevation: 0,
           ),
           darkTheme: FlexThemeData.dark(
             scheme: FlexScheme.outerSpace,
             fontFamily: 'Lato',
+            //  appBarBackground: Theme.of(context).cardColor,
             appBarElevation: 0,
           ),
           themeMode: theme,

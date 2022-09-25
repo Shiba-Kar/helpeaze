@@ -56,7 +56,7 @@ class _MyMedicalHistoryViewState extends State<MyMedicalHistoryView> {
                   validator: FormBuilderValidators.compose(
                       [FormBuilderValidators.required()]),
                   name: "fname",
-                  suffixIcon: const Icon(Icons.person),
+                  suffixIcon: Image.asset('assets/icons/illness.png'),
                 ),
                 CustomTextField(
                   hintText: "Doctor name",
@@ -65,12 +65,12 @@ class _MyMedicalHistoryViewState extends State<MyMedicalHistoryView> {
                     FormBuilderValidators.required(),
                     FormBuilderValidators.integer()
                   ]),
-                  suffixIcon: const Icon(Icons.phone),
+                  suffixIcon: Image.asset('assets/icons/stethoscope.png'),
                   keyboardType: TextInputType.phone,
                 ),
                 CustomTextField(
                   hintText: "Medicine Name",
-                  suffixIcon: const Icon(Icons.mail),
+                  suffixIcon: Image.asset('assets/icons/medicine.png'),
                   name: "email",
                   validator: FormBuilderValidators.compose([
                     FormBuilderValidators.required(),
@@ -83,7 +83,7 @@ class _MyMedicalHistoryViewState extends State<MyMedicalHistoryView> {
                     FormBuilderValidators.required(),
                   ]),
                   name: "ldvd",
-                  suffixIcon: const Icon(Icons.calendar_month),
+                  suffixIcon: Image.asset('assets/icons/calendar.png'),
                   hintText: "Last Doctor Visit Date",
                 ),
                 //  const Spacer(),

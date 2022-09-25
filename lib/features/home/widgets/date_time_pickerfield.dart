@@ -16,6 +16,7 @@ class DateTimePickerField extends StatelessWidget {
   final InputType inputType;
   final Icon? prefixIcon;
   final Widget? suffixIcon;
+  final BoxConstraints? suffixIconConstraints;
   const DateTimePickerField({
     Key? key,
     required this.hintText,
@@ -31,6 +32,7 @@ class DateTimePickerField extends StatelessWidget {
     this.suffixIcon,
     this.prefixIcon,
     this.inputType = InputType.date,
+    this.suffixIconConstraints,
   }) : super(key: key);
 
   @override
@@ -56,12 +58,16 @@ class DateTimePickerField extends StatelessWidget {
         isDense: true,
         // labelText: hintText,
         suffixIcon: suffixIcon,
+        suffixIconConstraints: suffixIconConstraints ??
+            BoxConstraints(
+              minHeight: 20.w,
+              maxWidth: 20.w,
+            ),
         hintText: hintText,
       ),
       name: name,
       inputType: inputType,
       validator: validator,
-
       keyboardType: keyboardType,
     );
   }

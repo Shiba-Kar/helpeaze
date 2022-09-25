@@ -20,6 +20,7 @@ class CustomTextField extends StatelessWidget {
   final void Function()? onTap;
   final bool readOnly;
   final Widget? suffixIcon;
+  final BoxConstraints? suffixIconConstraints;
   const CustomTextField({
     Key? key,
     required this.hintText,
@@ -39,6 +40,7 @@ class CustomTextField extends StatelessWidget {
     this.onTap,
     this.suffixIcon,
     this.fillColor,
+    this.suffixIconConstraints,
   }) : super(key: key);
 
   @override
@@ -73,6 +75,11 @@ class CustomTextField extends StatelessWidget {
         // labelText: hintText,
         suffixIcon: suffixIcon,
         hintText: hintText,
+        suffixIconConstraints: suffixIconConstraints ??
+            BoxConstraints(
+              minHeight: 20.w,
+              maxWidth: 20.w,
+            ),
       ),
       keyboardType: keyboardType,
       maxLength: maxLength,

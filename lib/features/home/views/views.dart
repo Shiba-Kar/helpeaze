@@ -7,3 +7,4 @@ export 'my_doctor_view.dart';
 export 'blood_donation_view.dart';
 export 'my_medical_history_view.dart';
 export 'my_medical_history_view.dart';
+export 'add_doctor_view.dart';

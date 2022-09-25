@@ -18,7 +18,10 @@ class RouterLocation extends BeamLocation<BeamState> {
         '/myDoctor',
         '/myEmergencyContact',
         '/myMediacalHistory',
-        '/bloodDonation', '/organDonation', '/hospitalsNearby',
+        '/bloodDonation',
+        '/organDonation',
+        '/hospitalsNearby',
+        '/addDoctor',
       ];
 
   @override
@@ -48,8 +51,8 @@ class RouterLocation extends BeamLocation<BeamState> {
           child: RegistrationView(),
         ),
       if (containsKey('home'))
-        const BeamPage(
-          key: ValueKey('home'),
+        BeamPage(
+          key: const ValueKey('home'),
           title: 'Home',
           type: BeamPageType.noTransition,
           child: HomeView(),
@@ -75,6 +78,13 @@ class RouterLocation extends BeamLocation<BeamState> {
           title: 'My Doctor',
           type: BeamPageType.slideRightTransition,
           child: MyDoctorView(),
+        ),
+      if (containsKey('addDoctor'))
+        const BeamPage(
+          key: ValueKey('addDoctor'),
+          title: 'Add Doctor',
+          type: BeamPageType.slideTopTransition,
+          child: AddDoctorView(),
         ),
       if (containsKey('myEmergencyContact'))
         const BeamPage(

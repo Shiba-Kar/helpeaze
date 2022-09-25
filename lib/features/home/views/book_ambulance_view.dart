@@ -83,15 +83,16 @@ class _BookAmbulanceViewState extends State<BookAmbulanceView> {
                         ),
                 ),
                 Row(
-                  children: const [
-                    Expanded(
+                  children: [
+                    const Expanded(
                       child: DateTimePickerField(
                         hintText: "Start Date",
                         name: "sdate",
                         suffixIcon: Icon(Icons.calendar_month_outlined),
                       ),
                     ),
-                    Expanded(
+                    SizedBox(width: 10.w),
+                    const Expanded(
                       child: DateTimePickerField(
                         hintText: "Start Time",
                         name: "stime",
