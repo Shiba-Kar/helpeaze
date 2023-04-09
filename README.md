@@ -1,6 +1,6 @@
 # helpeaze
 
-A new Flutter project.
+Hospital management APPLICATION only ui/ux .
 
 ## Getting Started
 
