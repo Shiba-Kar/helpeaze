@@ -1,16 +1,8 @@
 # helpeaze
 
-Hospital management APPLICATION only ui/ux .
+Hospital management Flutter application only ui/ux .
 
-## Getting Started
+![ScreenShot 1](https://github.com/Shiba-Kar/helpeaze/blob/master/screenshots/flutter_01.png) ![ScreenShot 2](https://github.com/Shiba-Kar/helpeaze/blob/master/screenshots/flutter_02.png)
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![ScreenShot 3](https://github.com/Shiba-Kar/helpeaze/blob/master/screenshots/flutter_03.png) ![ScreenShot 4](https://github.com/Shiba-Kar/helpeaze/blob/master/screenshots/flutter_04.png)
+![ScreenShot 5](https://github.com/Shiba-Kar/helpeaze/blob/master/screenshots/flutter_05.png)
