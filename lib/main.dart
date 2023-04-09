@@ -40,7 +40,7 @@ class MyApp extends ConsumerWidget {
       builder: (BuildContext context, __) {
         return MaterialApp.router(
           routeInformationParser: BeamerParser(),
-          supportedLocales: FormBuilderLocalizations.delegate.supportedLocales,
+          // supportedLocales: FormBuilderLocalizations.delegate.,
           backButtonDispatcher:
               BeamerBackButtonDispatcher(delegate: _routerDelegate),
           localizationsDelegates: const [FormBuilderLocalizations.delegate],
